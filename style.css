@@ -28,6 +28,11 @@ a{
   color: white;
 }
 
+li:hover{
+    background-color: #4F6D7A80;
+    border-radius: 10px;
+}
+
 li{
     font-size: 1.5rem;
 }
@@ -90,6 +95,10 @@ header{
 .functions{
     max-height: 50px;
     max-width: 9rem;
+}
+
+.functions:hover{
+    transform: scale(.95);
 }
 
 .user{
@@ -342,8 +351,7 @@ h3{
 }
 
 .project-functions button:hover{
-    width:24px;
-    height:24px;
+    transform: scale(.8); 
     cursor: pointer;
 }
 
