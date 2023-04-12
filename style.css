@@ -1,3 +1,12 @@
+:root{
+    --primary-color: #166088;
+    --card-color: white;
+    --card-shadow: #4F6D7A;
+    --secondar-color: #C0D6DF;
+    --gap-size: 1.5rem;
+}
+
+
 input, button, p, img, h3, ul{
     margin:0;
     padding:0;
@@ -16,18 +25,34 @@ ul{
 
 a{
   text-decoration: none;
+  color: white;
 }
 
 li{
     font-size: 1.5rem;
 }
 
+h3, 
+.user-name, 
+.user-tag, 
+.ann-title, 
+button.functions,
+.logo-name,
+a,
+.project-title{
+    font-weight: bold;
+}
+
+.bottom-header .user-name{
+    font-size: 1.5rem;
+}
+
 .page-container{
     display: grid;
-    grid-template-columns: minmax(200px, 300px) 3fr;
+    grid-template-columns: .5fr 3fr;
     height:100vh;
     grid-template-rows: 20% 1fr;
-    padding-right:20px;
+    background-color: #DBE9EE;
 }
 
 header{
@@ -35,11 +60,10 @@ header{
     grid-column: 2/-1;
     background-color: yellowgreen;
     grid-template-rows:1fr 1fr;
-    margin: 10px;
-    padding:10px;
+    padding:var(--gap-size);
     background-color: white;
-    border: 1px solid red;
     gap:20px;
+    box-shadow: 0 4px 10px -2px var(--card-shadow);
 }
 
 .top-header{
@@ -56,41 +80,40 @@ header{
 
 .dash-functions{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: space-between;
-    gap:10px;
+    grid-template-columns: repeat(3 ,minmax(100px, 9rem));
     align-items: center;
+    justify-content: right;
+    gap: 10px;
 }
-
 
 
 .functions{
     max-height: 50px;
-    max-width: 10rem;
+    max-width: 9rem;
 }
 
 .user{
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .5fr 1fr;
     gap:10px;
 }
 
 .top-right{
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50px 200px;
     justify-items: center;
+    justify-content: right;
     gap:5px;
 }
 
 .bottom-header .user{
-    grid-template-columns: minmax(50px, 100px) minmax(10ch, 50px) 4fr;
+    grid-template-columns: minmax(50px, 100px) minmax(10ch, 100px) 4fr;
 }
 
 img{
     max-width: 50px;
     max-height: 50px;
-    border: 1px solid black;
     border-radius: 50%;
     width:auto;
     height:auto;
@@ -106,9 +129,13 @@ img{
     height:100%;
 }
 
-.user-name{
-    font-weight: bold;
+
+.profile-pic{
+    background-color: greenyellow;
 }
+
+
+
 
 .greeting, .user-name{
     min-width:10ch;
@@ -116,14 +143,13 @@ img{
 
 
 button.functions{
-    background-color: #569DAA;
+    background-color: var(--primary-color);
     box-sizing: border-box;
     border: none;
     padding: .5rem 1rem;
     border-radius: 10px;
     color:white;
     font-size: 1rem;
-    font-weight: bold;
 }
 
 form{
@@ -131,7 +157,11 @@ form{
     gap:20px;
 }
 label{
+    display: grid;
     align-self: center;
+    grid-template-columns: minmax(50px, 100px) 1fr;
+    width:100%;
+    justify-content: left;
 }
 
 input{
@@ -139,28 +169,24 @@ input{
     max-height: 40px;
     min-height:30px;
     border-radius: 10px;
-    background-color: #B9EDDD;
+    background-color: var(--secondar-color);
 }
 
 input:focus{
-    outline:2px solid #569DAA;
+    outline:3px solid var(--primary-color);
 }
 
 .sidebar{
     grid-row: 1/-1;
-    background-color: #569DAA;
-    /* display: grid; */
-    /* grid-template-rows: minmax(50px,100px) 2fr 2fr; */
+    background-color: var(--primary-color);
     padding:1rem;
-    /* align-items: start; */
 
 }
 
 .sidebar-links{
     height:60%;
     display: grid;
-    grid-template-rows: .5fr 1fr;
-    align-items: start;
+    grid-template-rows: 1fr 3fr;
 }
 
 .logo{
@@ -168,27 +194,28 @@ input:focus{
     grid-template-columns: 1fr 5fr;
     align-items: center;
     column-gap: 20px;
+    
 }
 .logo-name{
     font-size: 2rem;
-    font-weight: bold;
-}
+    color: white;
+    font-family: 'Kanit', sans-serif;}
 
 li >img{
     max-height: 25px;
     max-width:25px;
-    justify-self: right;
+    justify-self: center;
 }
 
 .nav-1{
     display: grid;
-
 }
 
 .nav-1 > li{
     display: grid;
     grid-template-columns: minmax(50px,1fr) 5fr;
     column-gap: 20px;
+    align-items: center;
 }
 
 .nav-1 > li:nth-last-child(3){
@@ -199,15 +226,16 @@ li >img{
     display: grid;
     grid-template-columns: 2fr 0.5fr;
     grid-template-rows: 1fr 1fr;
-    padding: 10px;
-    gap: 20px;
+    padding: var(--gap-size);
+    gap: var(--gap-size);
+    margin-top:30px;
 }
 
 .announce-group, .trend-group{
     grid-column: 2;
     display: grid;
     grid-template-rows: 50px 1fr;
-    gap:20px;
+    gap:var(--gap-size);
     grid-template-columns: minmax(200px, 1fr);
 }
 
@@ -215,21 +243,20 @@ li >img{
     display: grid;
     align-items: center;
     justify-items: center;
-    border:1px solid black;
     padding:1rem;
     border-radius: 10px;
+    background-color: var(--card-color);
+    box-shadow: 0 4px 10px -2px var(--card-shadow);
 }
 
 .annoucement{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid grey;
 }
 
 .annoucement:nth-child(3){
     border-bottom: none;
 }
-.ann-title{
-    font-weight: bold;
-}
+
 
 .ann-descr{
     margin-bottom: 10px;
@@ -243,15 +270,17 @@ li >img{
     display: grid;
     grid-template-columns: .5fr 1fr;
     grid-template-rows: 25px 25px;
-    /* height:100%;
-    width:100%; */
     align-items: center;
     column-gap: 10px;
-    row-gap: 5px;
+    row-gap: 10px;
+    width:100%;
 }
 
 .trend-group .profile-pic{
     grid-row:1/-1;
+    width:100%;
+    justify-self: center;
+
 }
 
 .project-pins{
@@ -259,8 +288,8 @@ li >img{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 50px repeat(auto-fit, 200px);
     grid-row:span 2;
-    gap:20px;
-    /* align-items: end; */
+    gap:var(--gap-size);
+    
 }
 
 h3{
@@ -269,18 +298,63 @@ h3{
 }
 .project-pins h3{
     grid-column: 1/span 2;
-    border:1px solid yellow;
 }
 
 .project-card{
     display:grid;
     grid-template-rows: .5fr 1fr .5fr;
-    border:1px solid black;
     border-radius: 10px;
     padding:1rem;
+    background-color: var(--card-color);
+    box-shadow: 0 4px 10px -2px var(--card-shadow);
+    
 }
 
 .project-functions{
     align-self: end;
     justify-self: right;
+}
+
+.project-pins .project-title {
+    font-size: 1.25rem;
+}
+
+.project-card:nth-of-type(2n){
+    border-left:10px solid green; 
+}
+
+.project-card:nth-of-type(3){
+    border-left:10px solid green; 
+}
+
+
+.project-card:nth-of-type(1){
+    border-left:10px solid red; 
+}
+
+.project-card:nth-of-type(5){
+    border-left:10px solid orange; 
+}
+
+.project-functions button{
+    width:25px;
+    height:25px;
+}
+
+.project-functions button:hover{
+    width:24px;
+    height:24px;
+    cursor: pointer;
+}
+
+.project-functions button.fav{
+    background: url(images/star-outline.svg) no-repeat; 
+}
+
+.project-functions button.watch{
+    background: url(images/eye-outline.svg) no-repeat;
+}
+
+.project-functions button.share{
+    background: url(images/share-variant.svg) no-repeat;
 }
